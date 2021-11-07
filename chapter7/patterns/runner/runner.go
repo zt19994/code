@@ -15,8 +15,7 @@ import (
 // Runner 在给定的超时时间内执行一组任务
 // 并且在操作系统发送中断信号时结束这些任务
 type Runner struct {
-	// interrupt channel reports a signal from the
-	// operating system.
+	// interrupt channel reports a signal from the operating system.
 	// interrupt 通道报告从操作系统发送的信号
 	interrupt chan os.Signal
 
@@ -28,8 +27,7 @@ type Runner struct {
 	// timeout 报告处理任务已经超时
 	timeout <-chan time.Time
 
-	// tasks holds a set of functions that are executed
-	// synchronously in index order.
+	// tasks holds a set of functions that are executed synchronously in index order.
 	// tasks 持有一组以索引顺序依次执行的函数
 	tasks []func(int)
 }
